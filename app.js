@@ -6,9 +6,50 @@ const navItems = [
   ["Réseaux", "reseaux.html", "reseaux"]
 ];
 
+const creatorName = "OikattsoVT";
+const socialLinks = [
+  { label: "Discord", detail: "Rejoindre le serveur", href: "https://discord.gg/M9fMkT7J2A", icon: "◉", className: "discord-symbol" },
+  { label: "TikTok", detail: "@oikattsovt", href: "https://www.tiktok.com/@oikattsovt", icon: "♪", className: "tiktok-symbol" },
+  { label: "YouTube", detail: "@OiKattsoVT", href: "https://www.youtube.com/@OiKattsoVT", icon: "▶", className: "youtube-symbol" },
+  { label: "Twitch", detail: "@oikattsovt", href: "https://www.twitch.tv/oikattsovt", icon: "T", className: "twitch-symbol" },
+  { label: "X", detail: "@OikattsoVT", href: "https://x.com/OikattsoVT", icon: "𝕏", className: "x-symbol" }
+];
+
 const page = document.body.dataset.page || "accueil";
 const header = document.querySelector("[data-site-header]");
 const footer = document.querySelector("[data-site-footer]");
+const socialContainer = document.querySelector("[data-social-links]");
+
+if (socialContainer) {
+  socialLinks.forEach((social) => {
+    const link = document.createElement("a");
+    link.className = "social-card social-card-link";
+    link.href = social.href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+
+    const icon = document.createElement("span");
+    icon.className = "social-symbol " + social.className;
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = social.icon;
+
+    const copy = document.createElement("span");
+    copy.className = "social-card-copy";
+    const label = document.createElement("strong");
+    label.textContent = social.label;
+    const detail = document.createElement("small");
+    detail.textContent = social.detail;
+    copy.append(label, detail);
+
+    const external = document.createElement("span");
+    external.className = "social-external";
+    external.setAttribute("aria-label", "S'ouvre dans un nouvel onglet");
+    external.textContent = "↗";
+
+    link.append(icon, copy, external);
+    socialContainer.append(link);
+  });
+}
 
 if (header) {
   const links = navItems.map(([label, href, id]) => {
@@ -18,9 +59,9 @@ if (header) {
   header.className = "site-header";
   header.innerHTML =
     '<div class="header-inner">' +
-      '<a class="brand" href="index.html" aria-label="Kattso, accueil">' +
+      '<a class="brand" href="index.html" aria-label="' + creatorName + ', accueil">' +
         '<img src="assets/ravensvault-logo.png" alt="" width="52" height="52">' +
-        '<span class="brand-type"><strong>KATTSO</strong><small>un projet Ravensvault</small></span>' +
+        '<span class="brand-type"><strong>OIKATTSOVT</strong><small>personnage Kattso Fawks</small></span>' +
       '</a>' +
       '<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span><span class="visually-hidden">Ouvrir le menu</span></button>' +
       '<nav class="site-nav" id="site-navigation" aria-label="Navigation principale">' + links + '<a class="nav-contact" href="mailto:contact@ravensvault.eu">Me contacter <span aria-hidden="true">↗</span></a></nav>' +
@@ -46,11 +87,11 @@ if (footer) {
   footer.className = "site-footer";
   footer.innerHTML =
     '<div class="footer-main">' +
-      '<div class="footer-brand"><a class="footer-logo" href="index.html"><img src="assets/ravensvault-logo.png" alt="Logo Ravensvault" width="78" height="78"></a><div><p class="footer-overline">UN PROJET VTUBER</p><p class="footer-name">La tanière de Kattso</p><p class="footer-tagline">Une porte entrouverte, à son propre rythme.</p></div></div>' +
+      '<div class="footer-brand"><a class="footer-logo" href="index.html"><img src="assets/ravensvault-logo.png" alt="Logo Ravensvault" width="78" height="78"></a><div><p class="footer-overline">UN PROJET VTUBER</p><p class="footer-name">La tanière de Kattso Fawks</p><p class="footer-tagline">Une porte entrouverte, à son propre rythme.</p></div></div>' +
       '<div class="footer-contact"><span class="footer-overline">LE COURRIER EST OUVERT</span><a href="mailto:contact@ravensvault.eu">contact@ravensvault.eu <span aria-hidden="true">↗</span></a></div>' +
       '<div class="footer-navigation"><span class="footer-overline">EN UN CLIN D’ŒIL</span><div><a href="lore.html">Lore & avatar</a><a href="valeurs.html">Valeurs</a><a href="projets.html">Projets</a><a href="reseaux.html">Réseaux</a></div></div>' +
     '</div>' +
-    '<div class="footer-bottom"><span>© <span data-year></span> Kattso · Projet personnel non lucratif</span><div class="footer-legal"><a href="mentions-belgique.html">Mentions légales</a></div><a class="back-top" href="#top">Retour en haut ↑</a></div>';
+    '<div class="footer-bottom"><span>© <span data-year></span> ' + creatorName + ' · Projet personnel non lucratif</span><div class="footer-legal"><a href="mentions-belgique.html">Mentions légales</a></div><a class="back-top" href="#top">Retour en haut ↑</a></div>';
   footer.querySelector("[data-year]").textContent = new Date().getFullYear();
   const backToTop = footer.querySelector(".back-top");
   if (backToTop) {

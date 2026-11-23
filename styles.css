@@ -115,16 +115,17 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
 .lore-world-head > p, .interest-heading > p { max-width: 470px; margin: 0 0 4px; color: #69635d; font-size: 13px; line-height: 1.9; }
 .world-bottom { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; }
 .world-bottom > p { max-width: 520px; margin: 0; padding-left: 16px; border-left: 2px solid var(--blue); color: #676159; font-family: var(--serif); font-size: 18px; line-height: 1.65; }
-.varnac-card { padding: 22px 25px; background: var(--navy); color: var(--cream); }
-.varnac-top { display: flex; align-items: center; gap: 9px; color: #aeb7d1; font-size: 8px; font-weight: 750; letter-spacing: .15em; }
-.varnac-pin { color: #d8c77e; font-size: 17px; }
-.varnac-card h3 { margin: 12px 0 4px; color: #f3eddb; font-family: var(--serif); font-size: 30px; font-weight: 400; }
-.varnac-card > p { margin: 0; color: #d0cdbf; font-size: 10px; line-height: 1.7; }
-.varnac-rule { width: 38px; height: 1px; margin: 15px 0 12px; background: #d8c77e; }
-.varnac-card small { color: #b9b7ac; font-size: 9px; line-height: 1.7; }
-.varnac-story { display: grid; grid-template-columns: .5fr 1.5fr; gap: 35px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
-.varnac-index { padding-top: 5px; color: #8e877b; font-size: 8px; font-weight: 750; letter-spacing: .13em; }
-.varnac-story p { max-width: 720px; margin: 0; color: #77716b; font-size: 11px; line-height: 1.85; }
+.lore-location-card { padding: 22px 25px; background: var(--navy); color: var(--cream); }
+.lore-location-top { display: flex; align-items: center; gap: 9px; color: #aeb7d1; font-size: 8px; font-weight: 750; letter-spacing: .15em; }
+.lore-location-pin { color: #d8c77e; font-size: 17px; }
+.lore-location-card h3 { display: flex; align-items: center; min-height: 42px; margin: 12px 0 4px; }
+.lore-location-redaction { display: inline-block; width: 104px; height: 19px; border-radius: 2px; background: #08090d; box-shadow: 0 0 0 1px rgba(237,232,202,.18); }
+.lore-location-card > p { margin: 0; color: #d0cdbf; font-size: 10px; line-height: 1.7; }
+.lore-location-rule { width: 38px; height: 1px; margin: 15px 0 12px; background: #d8c77e; }
+.lore-location-card small { color: #b9b7ac; font-size: 9px; line-height: 1.7; }
+.lore-location-story { display: grid; grid-template-columns: .5fr 1.5fr; gap: 35px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.lore-location-index { padding-top: 5px; color: #8e877b; font-size: 8px; font-weight: 750; letter-spacing: .13em; }
+.lore-location-story p { max-width: 720px; margin: 0; color: #77716b; font-size: 11px; line-height: 1.85; }
 .lore-origins { padding: 68px 0 78px; background: #eee9d9; }
 .lore-origin-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; margin-top: 43px; }
 .origin-heading h2, .community-heading h2 { margin: 0; font-size: clamp(41px, 4.5vw, 57px); line-height: 1.03; }
@@ -482,8 +483,8 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
   .lore-world-head > p, .interest-heading > p { font-size: 12px; }
   .world-bottom { grid-template-columns: 1fr; gap: 22px; }
   .world-bottom > p { font-size: 16px; }
-  .varnac-card { padding: 19px 20px; }
-  .varnac-story { grid-template-columns: 1fr; gap: 8px; margin-top: 20px; }
+  .lore-location-card { padding: 19px 20px; }
+  .lore-location-story { grid-template-columns: 1fr; gap: 8px; margin-top: 20px; }
   .lore-origins { padding: 49px 0 56px; }
   .lore-origin-layout { grid-template-columns: 1fr; gap: 29px; margin-top: 33px; }
   .origin-heading h2 { font-size: 43px; }
